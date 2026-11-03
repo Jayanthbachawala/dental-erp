@@ -73,7 +73,7 @@ RUN mkdir -p uploads && chown nextjs:nodejs uploads
 # at which point this volume is inert rather than load-bearing. It stays
 # declared because `local` is still the default and still the right choice for
 # a single-instance clinic. See docs/STORAGE.md.
-VOLUME ["/app/uploads"]
+# Persistent uploads are mounted through Railway Volumes.
 
 USER nextjs
 
