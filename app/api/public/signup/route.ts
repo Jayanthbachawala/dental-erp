@@ -95,6 +95,15 @@ export async function POST(request: Request) {
         },
       })
 
+      await tx.baAccount.create({
+        data: {
+          accountId: user.id,
+          providerId: 'credential',
+          userId: user.id,
+          password: hashedPassword,
+        },
+      })
+
       return { hospital, user }
     })
 
